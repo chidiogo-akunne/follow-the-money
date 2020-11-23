@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { navigationRef } from "./constants";
 import { useThemeContext } from "./theme";
 import Screens from "./screens";
+import GetstartedNavigator from "./navigator/getStartedNavigator";
 
 const RootStack = createStackNavigator();
 
@@ -24,11 +25,15 @@ export default function AppNavigator() {
           },
         }}
       >
-        <RootStack.Screen name="HomeScreen" component={Screens.Home} />
         <RootStack.Screen
           name="SplashScreen"
           component={Screens.SplashScreen}
         />
+        <RootStack.Screen
+          name="OnboardingScreen"
+          component={GetstartedNavigator}
+        />
+        <RootStack.Screen name="HomeScreen" component={Screens.Home} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

@@ -1,27 +1,29 @@
-import 'styled-components';
-import { configureFonts, DefaultTheme } from 'react-native-paper';
+import "styled-components";
+import { configureFonts, DefaultTheme } from "react-native-paper";
 
 // All app colors
 enum COLORS {
-  WHITE = '#FFFFFF',
-  GREY = '#F8F8FB',
-  ONLINE = '#7ED321',
-  WARNING = '#F6A609',
-  PRIMARY = '#718CFB',
-  PRIMARY_LIGHT = '#8DA4FF',
-  SECONDARY = '#A875FF',
-  PRIMARY_TEXT = '#535D7E',
-  SECONDARY_TEXT = '#A9AEBE',
-  INACTIVE = '#DADAED',
-  DISABLED = '#E8E8E8',
-  ACTION = '#F1F3FF',
-  TRANSPARENT = 'transparent',
-  OFFWHITE = '#FBFCFF',
-  INPUT = '#E5E5E5',
-  SYSTEM_COLOR = '#F5F5F5',
-  SHADOW = 'F5F5F5',
-  BLACK = '#000000',
-  RED = '#FB4E4E'
+  WHITE = "#FFFFFF",
+  GREY = "#707070",
+  DARK_GREY = "#9f9f9f",
+  LIGHT_GREY = "#d1d1d1",
+  ONLINE = "#7ED321",
+  WARNING = "#F6A609",
+  PRIMARY = "#b6190f",
+  PRIMARY_LIGHT = "#8DA4FF",
+  SECONDARY = "#A875FF",
+  PRIMARY_TEXT = "#535D7E",
+  SECONDARY_TEXT = "#666666",
+  INACTIVE = "#bcbbbb",
+  DISABLED = "#E8E8E8",
+  ACTION = "#f6f6f6",
+  TRANSPARENT = "transparent",
+  OFFWHITE = "#FBFCFF",
+  INPUT = "#f5f5f5",
+  SYSTEM_COLOR = "#F5F5F5",
+  BLACK = "#000000",
+  RED = "#FB4E4E",
+  PINK = "#ffebe9",
 }
 
 // All app font sizes
@@ -29,13 +31,13 @@ enum FONTS {
   SMALL_SIZE = 8,
   MEDIUM_SIZE = 12,
   LARGE_SIZE = 16,
-  WORK_SANS_REGULAR = 'workSansRegular',
-  WORK_SANS_MEDIUM = 'workSansMedium',
-  WORK_SANS_SEMI_BOLD = 'workSansSemiBold',
-  WORK_SANS_BOLD = 'workSansBold'
+  WORK_SANS_REGULAR = "workSansRegular",
+  WORK_SANS_MEDIUM = "workSansMedium",
+  WORK_SANS_SEMI_BOLD = "workSansSemiBold",
+  WORK_SANS_BOLD = "workSansBold",
 }
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     // All Global App Colors
     colors: {
@@ -55,9 +57,11 @@ declare module 'styled-components' {
       TRANSPARENT: string;
       OFFWHITE: string;
       INPUT: string;
-      SHADOW: string;
       BLACK: string;
       RED: string;
+      DARK_GREY: string;
+      LIGHT_GREY: string;
+      PINK: string;
     };
 
     // All Global App Font Sizes
@@ -77,24 +81,24 @@ const paperFontConfig = {
   default: {
     regular: {
       fontFamily: FONTS.WORK_SANS_REGULAR,
-      fontWeight: 'normal'
+      fontWeight: "normal",
     },
 
     medium: {
       fontFamily: FONTS.WORK_SANS_MEDIUM,
-      fontWeight: 'normal'
+      fontWeight: "normal",
     },
 
     light: {
       fontFamily: FONTS.WORK_SANS_REGULAR,
-      fontWeight: 'normal'
+      fontWeight: "normal",
     },
 
     thin: {
       fontFamily: FONTS.WORK_SANS_REGULAR,
-      fontWeight: 'normal'
-    }
-  }
+      fontWeight: "normal",
+    },
+  },
 };
 
 export const paperTheme = {
@@ -107,10 +111,10 @@ export const paperTheme = {
     background: COLORS.WHITE,
     surface: COLORS.WHITE,
     text: COLORS.PRIMARY_TEXT,
-    disabled: COLORS.DISABLED
+    disabled: COLORS.DISABLED,
   },
   // @ts-ignore
-  fonts: configureFonts(paperFontConfig)
+  fonts: configureFonts(paperFontConfig),
 };
 
 // App theme

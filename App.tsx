@@ -11,6 +11,6 @@ export default function App() {
   return isAppReady ? (
     <AppRouter />
   ) : (
-    <AppLoading setIsAppReady={setIsAppReady(true)} />
+    <AppLoading setIsAppReady={setIsAppReady} />
   );
 }
