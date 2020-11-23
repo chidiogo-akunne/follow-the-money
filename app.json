@@ -2,28 +2,26 @@
   "expo": {
     "name": "follow-the-money",
     "slug": "follow-the-money",
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/splash.png",
+    "icon": "./assets/images/icon.png",
     "splash": {
       "resizeMode": "contain",
-      "backgroundColor": "#000"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.followthemoney.app",
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/splash.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/images/splash.png"
+      "package": "com.followthemoney.app",
+      "versionCode": 1
     }
   }
 }

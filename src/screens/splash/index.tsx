@@ -11,7 +11,11 @@ export default function SplashScreen(props: ScreenProp) {
   const { navigation } = props;
 
   useEffect(() => {
-    handleNavigation();
+    const timer = setTimeout(() => {
+      handleNavigation();
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleNavigation = () => {
