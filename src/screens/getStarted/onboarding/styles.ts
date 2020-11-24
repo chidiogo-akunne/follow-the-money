@@ -13,7 +13,9 @@ export const Cover = styled.View`
 `;
 
 export const ButtonCover = styled.View`
-  margin-bottom: ${RFValue(40)}px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: ${RFValue(50)}px;
   width: 100%;
   padding: 0 ${RFValue(20)}px;
 `;

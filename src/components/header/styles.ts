@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import { RFValue } from 'react-native-responsive-fontsize';
+import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
   width: 100%;
@@ -12,7 +12,6 @@ export const Container = styled.View`
 `;
 export const HeaderBackTitle = styled.Text`
   font-size: ${({ theme }) => theme.fonts.LARGE_SIZE}px;
-  font-family: ${({ theme }) => theme.fonts.WORK_SANS_SEMI_BOLD};
   color: ${({ theme }) => theme.colors.PRIMARY_TEXT};
   position: absolute;
   right: -10px;

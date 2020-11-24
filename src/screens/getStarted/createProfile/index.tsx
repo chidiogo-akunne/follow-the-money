@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Text, Title } from "react-native-paper";
+import DropDownPicker from "react-native-dropdown-picker";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,8 +15,13 @@ import SocialIcon from "../../../components/socialIcons";
 import Button from "../../../components/button";
 import ProgressBar from "../../../components/progressBar";
 
-import { Container, Cover, TextCover } from "./styles";
-import { ButtonCover } from "../login/styles";
+import {
+  Container,
+  Cover,
+  TextCover,
+  ButtonCover,
+  DropdownCover,
+} from "./styles";
 
 interface ScreenProp extends NavigationInterface {}
 
@@ -29,18 +35,33 @@ export default function CreateProfileScreen(props: ScreenProp) {
     location: "",
     password: "",
     confirmPassword: "",
+    name: "",
+    country: "",
+    state: "",
+    phoneNumber: "",
   });
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
-    navigation.navigate("ProfileScreen");
+    navigation.navigate("OTPScreen");
   };
 
   return (
     <Fragment>
       <StatusBar translucent animated style="dark" />
       <Header
-        title={() => null}
+        title={() => (
+          <Title
+            style={{
+              color: colors.BLACK,
+              fontSize: RFValue(fonts.LARGE_SIZE + 2),
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            Join the Movement
+          </Title>
+        )}
         headerLeft={() => (
           <TouchableHighlight
             {...props}
@@ -63,25 +84,149 @@ export default function CreateProfileScreen(props: ScreenProp) {
       />
       <Container>
         <Cover>
-          <Title
+          <ProgressBar progress="0" />
+          <Text
             style={{
-              color: colors.BLACK,
-              fontSize: RFValue(fonts.LARGE_SIZE + 2),
-              fontWeight: "bold",
+              color: colors.SECONDARY_TEXT,
+              fontSize: RFValue(fonts.MEDIUM_SIZE),
               textAlign: "center",
-              lineHeight: RFValue(24),
-              marginBottom: RFValue(20),
+              marginTop: RFValue(10),
+              marginBottom: RFValue(5),
             }}
           >
-            Join the Movement
-          </Title>
-          <ProgressBar progress="0" />
+            Let's get to know you
+          </Text>
+          <Input
+            placeholder="Full name"
+            defaultValue={state.name}
+            onChangeText={(name) => setState({ ...state, name })}
+            returnKeyType="next"
+          />
+          <Input
+            placeholder="Phone number"
+            defaultValue={state.phoneNumber}
+            onChangeText={(phoneNumber) => setState({ ...state, phoneNumber })}
+            returnKeyType="next"
+          />
           <Input
             placeholder="E-mail address or Phone number"
             defaultValue={state.email}
             onChangeText={(email) => setState({ ...state, email })}
             returnKeyType="next"
           />
+          <DropdownCover>
+            <DropDownPicker
+              items={[
+                {
+                  label: "Nigeria",
+                  value: "nigeria",
+                  hidden: true,
+                },
+                {
+                  label: "UK",
+                  value: "uk",
+                },
+                {
+                  label: "France",
+                  value: "france",
+                },
+              ]}
+              placeholder="Country"
+              defaultValue={state.country}
+              containerStyle={{
+                height: RFValue(40),
+                backgroundColor: colors.INPUT,
+                borderRadius: 5,
+                elevation: 0,
+                width: "48%",
+                borderColor: colors.INPUT,
+              }}
+              labelStyle={{
+                color: colors.SECONDARY_TEXT,
+                fontSize: fonts.MEDIUM_SIZE,
+                paddingLeft: RFValue(10),
+              }}
+              placeholderStyle={{
+                color: colors.SECONDARY_TEXT,
+                fontSize: fonts.MEDIUM_SIZE,
+                paddingLeft: RFValue(10),
+              }}
+              style={{
+                backgroundColor: colors.INPUT,
+                borderRadius: 5,
+                elevation: 0,
+                borderColor: colors.INPUT,
+              }}
+              itemStyle={{
+                justifyContent: "flex-start",
+              }}
+              dropDownStyle={{ backgroundColor: "#fafafa" }}
+              onChangeItem={(item) =>
+                setState({
+                  ...state,
+                  country: item.value,
+                })
+              }
+            />
+            <DropDownPicker
+              items={[
+                {
+                  label: "Lagos",
+                  value: "lagos",
+                  hidden: true,
+                },
+                {
+                  label: "Enugu",
+                  value: "enugu",
+                },
+                {
+                  label: "Kano",
+                  value: "kano",
+                },
+              ]}
+              placeholder="State"
+              defaultValue={state.state}
+              containerStyle={{
+                height: RFValue(40),
+                backgroundColor: colors.INPUT,
+                borderRadius: 5,
+                elevation: 0,
+                width: "48%",
+                borderColor: colors.INPUT,
+              }}
+              labelStyle={{
+                color: colors.SECONDARY_TEXT,
+                fontSize: fonts.MEDIUM_SIZE,
+                paddingLeft: RFValue(10),
+              }}
+              placeholderStyle={{
+                color: colors.SECONDARY_TEXT,
+                fontSize: fonts.MEDIUM_SIZE,
+                paddingLeft: RFValue(10),
+              }}
+              style={{
+                backgroundColor: colors.INPUT,
+                borderRadius: 5,
+                elevation: 0,
+                borderColor: colors.INPUT,
+              }}
+              itemStyle={{
+                justifyContent: "flex-start",
+              }}
+              dropDownStyle={{
+                backgroundColor: "#fafafa",
+                position: "absolute",
+                height: 200,
+              }}
+              onChangeItem={(item) =>
+                setState({
+                  ...state,
+                  state: item.value,
+                })
+              }
+            />
+          </DropdownCover>
+
           <Input
             placeholder="Where are you located?"
             defaultValue={state.location}
@@ -126,15 +271,15 @@ export default function CreateProfileScreen(props: ScreenProp) {
           </TextCover>
         </Cover>
         <ButtonCover>
+          <SocialIcon style={{ marginBottom: RFValue(25) }} />
           <Button name="Continue" onPress={handleSubmit} />
-          <SocialIcon style={{ marginTop: RFValue(1) }} />
           <Text
             onPress={() => {}}
             style={{
               color: colors.INACTIVE,
               fontSize: fonts.MEDIUM_SIZE,
               textAlign: "center",
-              marginTop: RFValue(15),
+              marginTop: RFValue(5),
             }}
           >
             What is Connected Development?

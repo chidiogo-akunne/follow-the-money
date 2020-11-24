@@ -18,5 +18,4 @@ export const ButtonCover = styled.View`
   width: 100%;
   padding: 0 ${RFValue(20)}px;
   margin-bottom: ${RFValue(25)}px;
-  margin-top: ${RFValue(40)}px;
 `;

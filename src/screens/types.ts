@@ -7,7 +7,7 @@ export type RootStackParamList = {
   LoginScreen?: Object;
   OnboardingScreen?: Object;
   CreateProfileScreen?: Object;
-  ProfileScreen?: Object;
+  OTPScreen?: Object;
   FollowUsersScreen?: Object;
   InterestScreen?: Object;
   HashTagScreen?: Object;

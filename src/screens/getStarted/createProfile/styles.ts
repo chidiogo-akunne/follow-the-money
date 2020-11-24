@@ -10,18 +10,24 @@ export const Container = styled.View`
 
 export const Cover = styled.View`
   padding: 0 ${RFValue(20)}px;
-  margin-top: ${RFPercentage(10)}px;
+  margin-top: ${RFPercentage(2)}px;
 `;
 
 export const TextCover = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: ${RFValue(15)}px;
+  margin-top: ${RFValue(25)}px;
 `;
 
 export const ButtonCover = styled.View`
   width: 100%;
   padding: 0 ${RFValue(20)}px;
-  margin-bottom: ${RFValue(20)}px;
+  margin-bottom: ${RFValue(40)}px;
+`;
+
+export const DropdownCover = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: ${RFValue(10)}px;
 `;

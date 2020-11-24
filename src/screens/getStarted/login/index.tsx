@@ -110,8 +110,8 @@ export default function LoginScreen(props: ScreenProp) {
           </TextCover>
         </Cover>
         <ButtonCover>
+          <SocialIcon style={{ marginBottom: RFValue(25) }} />
           <Button name="Login" onPress={handleSubmit} />
-          <SocialIcon style={{ marginTop: RFValue(1) }} />
         </ButtonCover>
       </Container>
     </Fragment>

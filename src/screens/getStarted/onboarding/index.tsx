@@ -54,10 +54,12 @@ export default function OnboardingScreen(props: ScreenProp) {
       </Cover>
       <ButtonCover>
         <Button
+          style={{ width: "48%" }}
           name="Login"
           onPress={() => navigation.navigate("LoginScreen")}
         />
         <OutlineButton
+          style={{ width: "48%" }}
           name="Register"
           onPress={() => navigation.navigate("CreateProfileScreen")}
         />

@@ -23,10 +23,7 @@ export default function GetstartedNavigator() {
         name="CreateProfileScreen"
         component={Screens.CreateProfileScreen}
       />
-      <GetstartedStack.Screen
-        name="ProfileScreen"
-        component={Screens.ProfileScreen}
-      />
+      <GetstartedStack.Screen name="OTPScreen" component={Screens.OTPScreen} />
       <GetstartedStack.Screen
         name="FollowUsersScreen"
         component={Screens.FollowUsersScreen}

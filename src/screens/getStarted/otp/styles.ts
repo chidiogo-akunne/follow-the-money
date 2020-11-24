@@ -11,13 +11,13 @@ export const Container = styled.View`
 
 export const Cover = styled.View`
   padding: 0 ${RFValue(20)}px;
-  margin-top: ${RFPercentage(10)}px;
+  margin-top: ${RFPercentage(3)}px;
 `;
 
 export const ButtonCover = styled.View`
   width: 100%;
   padding: 0 ${RFValue(20)}px;
-  margin-bottom: ${RFValue(20)}px;
+  margin-bottom: ${RFValue(50)}px;
 `;
 
 export const Card = styled.View`

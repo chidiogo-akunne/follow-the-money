@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Text, Title } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -25,7 +25,7 @@ export default function InterestScreen(props: ScreenProp) {
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
-    navigation.navigate("HashTagScreen");
+    navigation.navigate("HomeScreen");
   };
 
   return (
@@ -67,10 +67,11 @@ export default function InterestScreen(props: ScreenProp) {
       <Container>
         <Cover>
           <ProgressBar
-            progress="60"
+            progress="80"
             firstBar={{ backgroundColor: colors.PRIMARY }}
             secondBar={{ backgroundColor: colors.PRIMARY }}
             thirdBar={{ backgroundColor: colors.PRIMARY }}
+            fourthBar={{ backgroundColor: colors.PRIMARY }}
           />
           <Text
             style={{
@@ -88,13 +89,23 @@ export default function InterestScreen(props: ScreenProp) {
           >
             <InterestCover>
               {Interests.map((item: any) => (
-                <UserCard key={item.name} name={item.name} />
+                <UserCard name={item.name} />
               ))}
             </InterestCover>
           </ScrollView>
         </Cover>
         <ButtonCover>
-          <Button name="Continue" onPress={handleSubmit} />
+          <Button name="Finish" onPress={handleSubmit} />
+          <Text
+            style={{
+              color: colors.SECONDARY_TEXT,
+              fontSize: RFValue(fonts.MEDIUM_SIZE + 2),
+              textAlign: "center",
+            }}
+            onPress={() => navigation.navigate("HomeScreen")}
+          >
+            Skip
+          </Text>
         </ButtonCover>
       </Container>
     </Fragment>

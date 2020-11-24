@@ -25,7 +25,7 @@ export default function FollowUsers(props: ScreenProp) {
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
-    navigation.navigate("InterestScreen");
+    navigation.navigate("HashTagScreen");
   };
 
   const _renderItem = ({ item }: any) => (
@@ -95,9 +95,10 @@ export default function FollowUsers(props: ScreenProp) {
             contentContainerStyle={{
               marginTop: RFValue(5),
             }}
+            style={{ marginBottom: RFValue(30) }}
             renderItem={_renderItem}
             showsVerticalScrollIndicator={false}
-            keyExtractor={(item) => item.name}
+            // keyExtractor={(item) => item.name}
             ItemSeparatorComponent={() => (
               <Divider
                 style={{
@@ -111,6 +112,16 @@ export default function FollowUsers(props: ScreenProp) {
         </Cover>
         <ButtonCover>
           <Button name="Continue" onPress={handleSubmit} />
+          <Text
+            style={{
+              color: colors.SECONDARY_TEXT,
+              fontSize: RFValue(fonts.MEDIUM_SIZE + 2),
+              textAlign: "center",
+            }}
+            onPress={() => navigation.navigate("HomeScreen")}
+          >
+            Skip
+          </Text>
         </ButtonCover>
       </Container>
     </Fragment>

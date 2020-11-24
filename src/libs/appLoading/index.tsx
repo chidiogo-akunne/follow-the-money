@@ -11,7 +11,16 @@ export default function AppLoading({ setIsAppReady }: any) {
   };
 
   const loadAllAppAssets = async () => {
-    const images = [require("../../../assets/splash.png")];
+    const images = [
+      require("../../../assets/images/splash.png"),
+      require("../../../assets/images/icon.png"),
+      require("../../../assets/images/profilepic.png"),
+      require("../../../assets/images/appIcon.png"),
+      require("../../../assets/images/facebookIcon.png"),
+      require("../../../assets/images/gmailIcon.png"),
+      require("../../../assets/images/linkedinIcon.png"),
+      require("../../../assets/images/twitterIcon.png"),
+    ];
 
     const cacheImages = images.map((image) => {
       return Asset.fromModule(image).downloadAsync();

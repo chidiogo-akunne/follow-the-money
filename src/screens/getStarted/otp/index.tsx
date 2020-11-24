@@ -19,14 +19,13 @@ import { ButtonCover } from "../login/styles";
 
 interface ScreenProp extends NavigationInterface {}
 
-export default function ProfileScreen(props: ScreenProp) {
+export default function OTPScreen(props: ScreenProp) {
   const { navigation } = props;
   const { colors, fonts } = useThemeContext();
   const { top } = useSafeAreaInsets();
 
   const [state, setState] = useState({
-    name: "",
-    phoneNumber: "",
+    otp: "",
   });
 
   const handleSubmit = async () => {
@@ -38,7 +37,18 @@ export default function ProfileScreen(props: ScreenProp) {
     <Fragment>
       <StatusBar translucent animated style="dark" />
       <Header
-        title={() => null}
+        title={() => (
+          <Title
+            style={{
+              color: colors.BLACK,
+              fontSize: RFValue(fonts.LARGE_SIZE + 2),
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            Let People Find You Easily
+          </Title>
+        )}
         headerLeft={() => (
           <TouchableHighlight
             {...props}
@@ -61,23 +71,22 @@ export default function ProfileScreen(props: ScreenProp) {
       />
       <Container>
         <Cover>
-          <Title
-            style={{
-              color: colors.BLACK,
-              fontSize: RFValue(fonts.LARGE_SIZE + 2),
-              fontWeight: "bold",
-              textAlign: "center",
-              lineHeight: RFValue(24),
-              marginBottom: RFValue(20),
-            }}
-          >
-            Let People Find You Easily
-          </Title>
           <ProgressBar
             progress="20"
             firstBar={{ backgroundColor: colors.PRIMARY }}
           />
-          <Card>
+          <Text
+            style={{
+              color: colors.SECONDARY_TEXT,
+              fontSize: RFValue(fonts.MEDIUM_SIZE),
+              textAlign: "center",
+              marginTop: RFValue(20),
+              marginBottom: RFValue(15),
+            }}
+          >
+            A 4 digit code has been sent to your phone number
+          </Text>
+          {/* <Card>
             <TouchableHighlight
               style={{
                 width: 60,
@@ -112,16 +121,11 @@ export default function ProfileScreen(props: ScreenProp) {
             </Text>
             <SocialIcon style={{ marginTop: RFValue(1) }} />
           </Card>
+           */}
           <Input
-            placeholder="Full name"
-            defaultValue={state.name}
-            onChangeText={(name) => setState({ ...state, name })}
-            returnKeyType="next"
-          />
-          <Input
-            placeholder="Phone number"
-            defaultValue={state.phoneNumber}
-            onChangeText={(phoneNumber) => setState({ ...state, phoneNumber })}
+            placeholder="OTP"
+            defaultValue={state.otp}
+            onChangeText={(otp) => setState({ ...state, otp })}
             returnKeyType="next"
           />
         </Cover>

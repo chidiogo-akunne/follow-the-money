@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useContext } from "react";
 import { Provider as PaperProvider } from "react-native-paper";
-import changeNavigationBarColor from "react-native-navigation-bar-color";
 import {
   ThemeProvider as Provider,
   ThemeContext,
@@ -10,7 +9,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { styledComponentTheme, paperTheme } from "./types";
 
 const ThemeProvider: FunctionComponent = ({ children }) => {
-  changeNavigationBarColor(styledComponentTheme.colors.WHITE, true, true);
   return (
     <PaperProvider
       theme={paperTheme}
