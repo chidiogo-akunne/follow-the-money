@@ -18,7 +18,6 @@ export default function AppNavigator() {
         screenOptions={{
           headerShown: false,
           headerBackTitleStyle: {
-            fontFamily: fonts.WORK_SANS_MEDIUM,
             color: colors.PRIMARY_TEXT,
             fontSize: fonts.MEDIUM_SIZE,
             textTransform: "capitalize",
